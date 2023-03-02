@@ -102,4 +102,22 @@ public abstract class Type {
             return false;
         }
     }
+
+    public static class Int extends Type {
+
+        @Override
+        public boolean simpleEquals(Type t) {
+            return t instanceof Int;
+        }
+
+    }
+
+    public static class Bool extends Type {
+
+        @Override
+        public boolean simpleEquals(Type t) {
+            return t instanceof Bool;
+        }
+
+    }
 }

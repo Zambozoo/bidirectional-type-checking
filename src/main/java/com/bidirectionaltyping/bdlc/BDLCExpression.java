@@ -239,4 +239,41 @@ public abstract class BDLCExpression {
             return result + ")";
         }
     }
+
+    public static class IntegerExpression extends BDLCExpression {
+        int value;
+
+        public IntegerExpression(int value) {
+            this.value = value;
+        }
+
+        @Override
+        public Type synthesize(TypingContext context) {
+            return new Type.Int();
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+    }
+
+    public static class BooleanExpression extends BDLCExpression {
+        boolean value;
+
+        public BooleanExpression(boolean value) {
+            this.value = value;
+        }
+
+        @Override
+        public Type synthesize(TypingContext context) {
+            return new Type.Int();
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+    }
+
 }
